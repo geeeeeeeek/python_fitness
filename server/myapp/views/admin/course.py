@@ -13,10 +13,6 @@ from myapp.serializers import CourseSerializer
 def list_api(request):
     if request.method == 'GET':
 
-        courses = Course.objects.all().order_by('-create_time')
-
-        serializer = CourseSerializer(courses, many=True)
-        return APIResponse(code=0, msg='查询成功', data=serializer.data)
 
 
 @api_view(['GET'])
@@ -52,28 +48,6 @@ def create(request):
     return APIResponse(code=1, msg='创建失败')
 
 
-@api_view(['POST'])
-@authentication_classes([AdminTokenAuthtication])
-def update(request):
-
-    if isDemoAdminUser(request):
-        return APIResponse(code=1, msg='演示帐号无法操作')
-
-    try:
-        pk = request.GET.get('id', -1)
-        course = Course.objects.get(pk=pk)
-    except Course.DoesNotExist:
-        return APIResponse(code=1, msg='对象不存在')
-
-    serializer = CourseSerializer(course, data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-        return APIResponse(code=0, msg='查询成功', data=serializer.data)
-    else:
-        print(serializer.errors)
-        utils.log_error(request, '参数错误')
-
-    return APIResponse(code=1, msg='更新失败')
 
 
 @api_view(['POST'])
