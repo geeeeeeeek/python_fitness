@@ -1,10 +1,20 @@
-> 基于python+django+vue.js开发的健身房管理系统
+> 基于python+django+vue.js开发的健身房管理系统，开发者微信：lengqin1024
 
 ### 功能介绍
 
 平台采用B/S结构，后端采用主流的Python语言进行开发，前端采用主流的Vue.js进行开发。
 
 功能包括：教练管理、会员管理、场地管理、设备管理、用户管理、日志管理、系统信息模块。
+
+
+### 演示地址
+
+http://fitness.gitapp.cn
+
+演示帐号：
+
+用户名：admin123
+密码：admin123
 
 ### 主要使用技术
 
@@ -22,14 +32,6 @@
 
 
 
-### 演示地址
-
-http://fitness.gitapp.cn
-
-演示帐号：
-
-用户名：admin123
-密码：admin123
 
 ### 代码结构
 
@@ -91,6 +93,11 @@ npm run dev
 
 参见[后端开发文档](server/readme-doc.md)
 
+### 开发文档
 
-### 作者微信（lengqin1024）
+[点击查看](doc.md)
+
+### 付费咨询
+
+微信（lengqin1024）
 
